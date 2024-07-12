@@ -1,0 +1,66 @@
+{
+    "VizWiz_train_00014902": {
+        "model": "Human Experts",
+        "answerability": "answerable",
+        "question": "What is this?",
+        "question_type": "Identification",
+        "image_url": "https://vizwiz.cs.colorado.edu/VizWiz_visualization_img/VizWiz_train_00014902.jpg",
+        "answer_paragraph": "Ringer's lactate solution (RL), also known as sodium lactate solution and Hartmann's solution, is a mixture of sodium chloride, sodium lactate, potassium chloride, and calcium chloride in water. It is used for replacing fluids and electrolytes in those who have low blood volume or low blood pressure. It may also be used to treat metabolic acidosis in cases other than those caused by lactic acidosis and to wash the eye following a chemical burn. It is given by injection into a vein or applied to the affected area.",
+        "answer_sentences": [
+            "Ringer's lactate solution (RL), also known as sodium lactate solution and Hartmann's solution, is a mixture of sodium chloride, sodium lactate, potassium chloride, and calcium chloride in water.",
+            "It is used for replacing fluids and electrolytes in those who have low blood volume or low blood pressure.",
+            "It may also be used to treat metabolic acidosis in cases other than those caused by lactic acidosis and to wash the eye following a chemical burn.",
+            "It is given by injection into a vein or applied to the affected area."
+        ],
+        "functional_roles": [
+            [
+                "Answer",
+                "Miscellaneous",
+                "Auxiliary Information"
+            ],
+            [
+                "Answer (Summary)",
+                "Auxiliary Information",
+                "Auxiliary Information"
+            ],
+            [
+                "Auxiliary Information",
+                "Auxiliary Information",
+                "Auxiliary Information"
+            ],
+            [
+                "Answer",
+                "Answer",
+                "Auxiliary Information"
+            ],
+            [
+                "Answer (Summary)",
+                "Answer (Summary)",
+                "Answer (Summary)"
+            ]
+        ], 
+        "information_types": [
+            [
+                "Image Content",
+                "Image Quality"
+            ],
+            [
+                "Image Content",
+                "Image Quality",
+                "External Information"
+            ],
+            [
+                "Image Content",
+                "Image Quality",
+                "External Information"
+            ],
+            [
+                "Image Content"
+            ],
+            [
+                "Image Content",
+                "Image Quality"
+            ]
+        ]
+    }
+}
