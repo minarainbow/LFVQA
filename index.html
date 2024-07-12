@@ -109,7 +109,7 @@
                   </span> -->
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="/explorer.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="/LFVQA/explorer.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fa fa-search"></i>
                     </span>
@@ -163,10 +163,8 @@
       <div class="hero-body">
         <img src="static/images/teaser-lfvqa.jpg" style="margin-bottom: 2%;" alt="" width="85%" />
         <h2 class="subtitle has-text-centered">
-          We collect long-form answers for image-question pairs in the <a href="https://vizwiz.org/">VizWiz</a> dataset.
-          FFor each visual question, we collect an answer from a human expert describer and six vision language models
-          (GPT-4V, Gemini, LLaVA, InstructBLIP, QWEN, BLIP-2).
-          To understand the content and structure of long-form visual question answers,
+          Our dataset <i>VizWiz-LF</i> contains 4.2k long-form answers to visual questions, collected from human expert describers and six VQA models.
+          To understand the content and structure of long-form visual question answers (LFVQA),
           we create a taxonomy of functional roles and annotate answer functional roles and information types at a
           sentence level.
         </h2>
@@ -216,6 +214,10 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <img src="static/images/dataset_overview.jpg" alt="" /><br>
+            <h2 class="subtitle has-text-centered">
+              To construct VizWiz-LF dataset, we first sample image-question pairs from the orginal VizWiz dataset.
+              For each visual question, we collect an answer from human expert describers and six vision language models.
+            </h2>
           </div>
         </div>
     <br><br><hr style="background-color: lightgray;"><br><br>
@@ -225,10 +227,9 @@
           <div class="column is-four-fifths">
             <img src="static/images/qualitative_examples.png" alt="" /><br>
             <h2 class="subtitle has-text-centered">
-              To enable access to image content and style details that were not specified in the prompt, we extract the
-              visual content and visual style of the generated image candidates.
-              We answer 5 questions (setting, subjects, emotion, likely use, colors) using Visual Question Answering
-              with BLIP-2:
+            While traditional visual question answering (VQA) datasets contain short-form answers collected from crowdworkers,
+            long-form visual question answering (LFVQA) has a lot of potential providing detailed and nuanced answers including explanations.
+            When answers cannot be found from the provided image, long-form answers can still provide potential answers and suggestions to re-take the photos.
             </h2>
           </div>
         </div>
@@ -246,7 +247,7 @@
             <img src="static/images/functional_roles.png" width="70%"
               alt="" /><br/><br/>
             <h3 class="subtitle">
-              Definitions of functional roles identified in VizWiz-LF dataset
+              Definitions and examples of functional roles identified in our dataset
             </h3>
           </div>
         </div>
@@ -257,7 +258,7 @@
             <img src="static/images/information_types.png" width="70%"
               alt="" /><br/><br/>
             <h3 class="subtitle">
-              Definitions of information types identified in VizWiz-LF dataset
+              Definitions and examples of information types identified in our dataset
             </h3><br><br>
           </div>
         </div>
@@ -265,7 +266,7 @@
     </div>
 </section>
 
-
+<!-- <br><hr style="background-color: lightgray;"><br> -->
 
 
 
