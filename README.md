@@ -8,6 +8,6 @@ This is the repository for annotated data and model for this paper: </br>
 >
 > [Long-Form Answers to Visual Questions from Blind and Low Vision People](). In: Conference on Language Modeling (COLM 2024)
 
-✨ Check out our [website](https://minahuh.com/lfvqa) for sample annotations and demo!
+✨ Check out our [website](https://minahuh.com/LFVQA) for sample annotations and demo!
 
 
