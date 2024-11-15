@@ -4,64 +4,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VizWiz-LF dataset</title>
-
-    <!-- <link rel="shortcut icon" href="https://www.cs.utexas.edu/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon"> -->
-
-    <!-- Bootstrap CSS -->
+    <title>VizWiz-LF Dataset</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- css -->
     <style>
-        .citations {
-            overflow: auto;
-        }
-
-        #intro_fig {
-            max-width: 500px;
-        }
-
-        #main {
-            max-width: 1500px;
-        }
-
-        /* #navbar {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-    }
-
-    #navbar-content {
-      max-width: 1500px;
-    } */
-
-        #table-of-contents {
-            overflow: auto;
-        }
-
-        #leaderboard {
-            overflow-y: auto;
-        }
-
-        #questions-list-cell {
-            overflow-y: auto;
-        }
-
         #question-display {
             overflow-y: auto;
         }
+
+        .question-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .question-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-left: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .custom-badge {
+            font-size: 0.8rem;
+            /* Adjusts the size */
+            font-weight: 200;
+            background-color: #5d5d5d;
+            /* Removes boldness */
+            /* padding: 0.2em 0.5em; */
+            /* Adjusts padding for a smaller look */
+        }
+
+
+        .btn-question {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-question:hover {
+            background-color: #e2e6ea;
+        }
+
+        .model-answer {
+            margin-top: 20px;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+        }
     </style>
-    <!-- Favicons -->
 </head>
 
 <body class="vh-100">
     <nav id="navbar" class="shadow-sm navbar navbar-light bg-light">
         <div id="navbar-content" class="container">
-            <a class="navbar-brand" href="#">VizWiz-LF dataset</a>
+            <a class="navbar-brand" href="#">VizWiz-LF Dataset</a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
-                <!-- <li class="nav-item"><a href="./explorer.html" class="nav-link active" aria-current="page">Data Explorer</a></li> -->
             </ul>
         </div>
     </nav>
@@ -71,75 +71,34 @@
                 <div id="filter-cell">
                     <h3 class="pt-4">Filters:</h3>
                     <div class="row px-4">
-                        <div class="list-group col-6 p-1">
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter" value="all_models"
-                                    checked>Show All</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="experts">Human Experts</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="gpt-4v">GPT-4V</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="gemini">Gemini</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="llava">LLaVA</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="qwen">QWEN</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="blip-2">BLIP-2</input>
-                            </label>
-                            <label class="list-group-item list-group-item-success">
-                                <input class="form-check-input me-1" type="radio" name="model_filter"
-                                    value="instructblip">InstructBLIP</input>
-                            </label>
-                        </div>
-                        <div class="list-group col-6 p-1">
+                        <div class="list-group col-12 p-1">
                             <label class="list-group-item list-group-item-warning">
                                 <input class="form-check-input me-1" type="radio" name="answerability_filter"
-                                    value="all_answerability" checked>Show
-                                All</input>
+                                    value="all_answerability" checked>Show All
                             </label>
                             <label class="list-group-item list-group-item-warning">
                                 <input class="form-check-input me-1" type="radio" name="answerability_filter"
-                                    value="answerable">Answerable</input>
-                            </label>
+                                    value="answerable">Answerable</label>
                             <label class="list-group-item list-group-item-warning">
                                 <input class="form-check-input me-1" type="radio" name="answerability_filter"
-                                    value="unanswerable">Unanswerable</input>
-                            </label>
+                                    value="unanswerable">Unanswerable</label>
                             <br />
                             <label class="list-group-item list-group-item-primary">
                                 <input class="form-check-input me-1" type="radio" name="type_filter" value="all_types"
-                                    checked>Show
-                                All</input>
+                                    checked>Show All</label>
+                            <label class="list-group-item list-group-item-primary">
+                                <input class="form-check-input me-1" type="radio" name="type_filter"
+                                    value="identification">Identification</label>
+                            <label class="list-group-item list-group-item-primary">
+                                <input class="form-check-input me-1" type="radio" name="type_filter"
+                                    value="description">Description</label>
+                            <label class="list-group-item list-group-item-primary">
+                                <input class="form-check-input me-1" type="radio" name="type_filter"
+                                    value="reading">Reading
                             </label>
                             <label class="list-group-item list-group-item-primary">
                                 <input class="form-check-input me-1" type="radio" name="type_filter"
-                                    value="identification">Identification</input>
-                            </label>
-                            <label class="list-group-item list-group-item-primary">
-                                <input class="form-check-input me-1" type="radio" name="type_filter"
-                                    value="description">Description</input>
-                            </label>
-                            <label class="list-group-item list-group-item-primary">
-                                <input class="form-check-input me-1" type="radio" name="type_filter"
-                                    value="reading">Reading</input>
-                            </label>
-                            <label class="list-group-item list-group-item-primary">
-                                <input class="form-check-input me-1" type="radio" name="type_filter"
-                                    value="others">Others</input>
+                                    value="others">Others
                             </label>
                         </div>
                         <hr class="mt-4" />
@@ -151,219 +110,139 @@
                 </div>
             </div>
             <div id="question-display" class="col-8 py-4 d-none">
-                <div class="alert alert-info">
-                    <h3>Question <span class="badge bg-secondary" id="question-type"></span>
-                        <span class="badge bg-light text-dark" id="answerability"></span>
-                    </h3>
+                <div class="alert question-details">
+                    <div>
+                        <h3>Visual Question
+                            <span class="badge custom-badge" id="answerability"></span>
+                            <span class="badge custom-badge" id="question-type"></span>
+                        </h3>
+                        <hr>
+                        <p id="question-info"></p>
+                    </div>
+                    <img id="question-image" class="question-image" src="" alt="Question-related image">
+                </div>
+                <div class="alert">
+                    <h3 class="pt-2">Long Answers</h3>
+                    <ul class="nav nav-tabs" id="model-tabs" role="tablist"></ul>
+                    <div class="tab-content" id="model-tab-content"></div>
+                    <h3 class="pt-2">Short Answers</h3>
                     <hr>
-                    <p id="question-info">This is an example question</p>
-                </div>
-                <div class="row">
-                    <div id="answer-paragraph-display" class='d-none'>
-                        <div class="alert">
-                            <h3>Answer <span class="badge bg-secondary" id="model"></span></h3>
-                            <hr>
-                            <p id='answer-paragraph'></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="alert" id="answer-sentences-table">
-                            <h4><span class='d-none'></span>Answer sentences</h4>
-                            <hr>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style='width:40px;'>#</th>
-                                        <th scope="col" style='width:630px;'>Answer Sentence</th>
-                                        <th scope="col" style='width:170px;'>Functional Roles</th>
-                                        <th scope="col" style='width:170px;'>Information Types</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="answer-sentence-rows">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <ul id="crowd-answers-list"></ul>
+
                 </div>
             </div>
         </div>
     </main>
-    <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
     <script>
-        function bold_summary_sentences(ex) {
-            $("#answer-sentences-table").addClass("d-none");
-            $("#answer-paragraph-display").removeClass("d-none");
-            $("#answer-paragraph").empty();
-            $("#answer-paragraph").append('<p>');
-            for (let i = 1; i <= ex['answer_sentences'].length; i++) {
-                // if (ex['summary_sentences'].includes(i)) {
-                //   $("#answer-paragraph").append('<b>' + ex['answer_sentences'][i - 1] + '</b>');
-                // }
-                // else {
-                //   $("#answer-paragraph").append(ex['answer_sentences'][i - 1]);
-                // }
-                $("#answer-paragraph").append(ex['answer_sentences'][i - 1]);
-            }
-            $("#answer-paragraph").append('</p>');
-        }
-
-        // create sentence level table 
-        function create_sentence_level_table(ex) {
-            // $("#answer-paragraph-display").addClass("d-none");
-            $("#answer-sentences-table").removeClass("d-none");
-            $("#answer-sentence-rows").empty();
-            for (let i = 1; i <= ex['answer_sentences'].length; i++) {
-                console.log(ex['functional_roles'][i - 1])
-
-                $("#answer-sentence-rows").append(
-                        '<tr><th scope="row">' + + i + '</th><td>'
-                        + ex['answer_sentences'][i - 1] + '</td><td>' + ex['functional_roles'][i - 1].join(', ') + '</td> + <td>' + ex['information_types'][i - 1].join(', ') + '</td><tr>');
-                // if (ex['functional_roles'][i - 1].length) {
-                //     $("#answer-sentence-rows").append(
-                //         '<tr><th scope="row">' + + i + '</th><td>'
-                //         + ex['answer_sentences'][i - 1] + '</td><td>' + ex['functional_roles'][i - 1].join(', ') + '</td></tr>');
-                // }
-                // else {
-                //     $("#answer-sentence-rows").append(
-                //         '<tr><th scope="row">' + + i + '</th><td>'
-                //         + ex['answer_sentences'][i - 1] + '</td><td>' + ex['raw_role_annotation'][i - 1] + '</td></tr>');
-                // }
-                // if (ex['information_types'][i - 1].length) {
-                //     $("#answer-sentence-rows").append(
-                //         '<tr><th scope="row">' + + i + '</th><td>'
-                //         + ex['answer_sentences'][i - 1] + '</td><td>' + ex['information_types'][i - 1].join(', ') + '</td></tr>');
-                // }
-                // else {
-                //     $("#answer-sentence-rows").append(
-                //         '<tr><th scope="row">' + + i + '</th><td>'
-                //         + ex['answer_sentences'][i - 1] + '</td><td>' + ex['raw_role_annotation'][i - 1] + '</td></tr>');
-                // }
-        }
-        }
-
-        function display_summary_sentences(ex) {
-            if (ex['type'] != 'role') {
-                $("#summary-sentence-idx").text(ex["summary_sentences"].join(' , '));
-            }
-            else {
-                // get all the summary index --> probably should move to the data processing side
-                summary_index = [];
-                for (let i = 1; i <= ex['role_annotation'].length; i++) {
-                    if (ex['role_annotation'][i - 1] == 'Answer (Summary)') {
-                        summary_index.push(i);
-                    }
-                }
-                $("#summary-sentence-idx").text(summary_index.join(' , '));
-            }
-        }
-
-        function display_invalid_reason(all_invalid_reasons) {
-            const invalid_reaon_set = new Set()
-            for (let i = 0; i < all_invalid_reasons.length; i++) {
-                for (let j = 0; j < all_invalid_reasons[i].length; j++) {
-                    invalid_reaon_set.add(all_invalid_reasons[i][j]);
-                }
-            }
-
-            $("#invalid-reason").text(Array.from(invalid_reaon_set).join(" "));
-        }
-
-        function show_question_info(ex) {
-            console.log(ex["answerability"]);
-
+        function displayQuestionDetails(data) {
             $("#question-display").removeClass("d-none");
-            $("#question-info").text(ex["question"]);
-            $("#model").text(ex["model"]);
-            $("#answerability").text(ex["answerability"]);
-            $("#question-type").text(ex["question_type"]);
-            if (ex["answerability"] === "answerable") {
-                $("#answerability").text("Answerable");
-                $("#summary-display").addClass('d-none');
-                $("#invalid-reason-display").addClass("d-none");
-                bold_summary_sentences(ex);
-            }
-            else {
-                $("#answerability").text("Unanswerable");
-                $("#summary-display").addClass('d-none');
-                $("#invalid-reason-display").removeClass("d-none");
-                display_invalid_reason(ex['invalid_reason']);
-                bold_summary_sentences(ex);
-            }
-            $("#answer-paragraph").text(ex["answer_paragraph"]);
-            create_sentence_level_table(ex);
+            $("#question-image").attr("src", data.image_url || "https://via.placeholder.com/200");
+            $("#question-info").text(data.question);
+            $("#question-type").text(data.question_type || "Unknown");
+            $("#answerability").text(data.answerability || "Unknown");
 
-    };
+            // Populate crowd answers
+            const crowdAnswersHTML = data.crowd_answers.map(answer => `<li>${answer}</li>`).join("");
+            $("#crowd-answers-list").html(crowdAnswersHTML);
 
-        function create_questions_list(data) {
-            let model_filter = $("input[name=model_filter]:checked").val();
-            let answerability_filter = $("input[name=answerability_filter]:checked").val();
-            let type_filter = $("input[name=type_filter]:checked").val();
+            // Populate model tabs and content
+            const modelAnswers = data.long_answers;
+            const tabsHTML = Object.keys(modelAnswers).map((model, index) => `
+                <li class="nav-item">
+                    <a class="nav-link ${index === 0 ? 'active' : ''}" id="tab-${model}" data-bs-toggle="tab" href="#content-${model}" role="tab">${model}</a>
+                </li>`).join("");
+            $("#model-tabs").html(tabsHTML);
+
+            const contentHTML = Object.keys(modelAnswers).map((model, index) => {
+                const modelData = modelAnswers[model];
+                const rows = (modelData.answer_sentences || []).map((sentence, i) => `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${sentence}</td>
+                        <td>${(modelData.functional_roles[i] || []).join(", ")}</td>
+                        <td>${(modelData.information_types[i] || []).join(", ")}</td>
+                    </tr>`).join("");
+                return `
+                    <div class="tab-pane alert fade ${index === 0 ? 'show active' : ''}" id="content-${model}" role="tabpanel">
+                        <div>
+                            <h5>Answer Paragraph</h5>
+                            <p>${modelData.answer_paragraph || "No answer available."}</p>
+                        </div>
+                        <div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Answer Sentence</th>
+                                        <th>Functional Roles</th>
+                                        <th>Information Types</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${rows}</tbody>
+                            </table>
+                        </div>
+                    </div>`;
+            }).join("");
+            $("#model-tab-content").html(contentHTML);
+        }
+
+        function createQuestionsList(data) {
             $("#questions-list").empty();
-            Object.keys(data).map(ex => {
-                console.log(data[ex], model_filter, answerability_filter, type_filter);
-                if ((model_filter == "all_models"
-                    || (model_filter == "experts" && data[ex]["model"] == "Human Experts")
-                    || (model_filter == "gpt-4v" && data[ex]["model"] == "GPT-4v")
-                    || (model_filter == "gemini" && data[ex]["model"] == "Gemini")
-                    || (model_filter == "llava" && data[ex]["model"] == "LLaVA")
-                    || (model_filter == "qwen" && data[ex]["model"] == "QWEN")
-                    || (model_filter == "blip-2" && data[ex]["model"] == "BLIP-2")
-                    || (model_filter == "instructblip" && data[ex]["model"] == "InstructBLIP")
-                )
-                    && (answerability_filter == "all_answerability"
-                        || (answerability_filter == "answerable" && data[ex]["type"] == "answerable")
-                        || (answerability_filter == "unanswerable" && data[ex]["type"] == "unanswerable")
-                )
-                    && (type_filter == "all_types"
-                        || (type_filter == "identification" && data[ex]["type"] == "identification")
-                        || (type_filter == "description" && data[ex]["type"] == "description")
-                        || (type_filter == "reading" && data[ex]["type"] == "reading")
-                        || (type_filter == "others" && data[ex]["type"] == "others")
-                )) {
-                    console.log(data[ex]['question'])
-                    $("#questions-list").append('<button class="alert alert-info question-item text-start shadow container-fluid py-2 my-2" id=' + ex +
-                        '>' + data[ex]['question'] + '</button>');
+            Object.keys(data).forEach(id => {
+                const question = data[id].question;
+                $("#questions-list").append(`<button class="btn btn-question w-100 mb-2 question-item" data-id="${id}">
+                    ${question}
+                </button>`);
+            });
+
+            $(".question-item").click(function () {
+                $(".question-item").removeClass("active");
+                $(this).addClass("active");
+                const id = $(this).data("id");
+                displayQuestionDetails(data[id]);
+            });
+        }
+
+        function applyFilters(data) {
+            let filteredData = {};
+            const answerabilityFilter = $("input[name=answerability_filter]:checked").val();
+            const typeFilter = $("input[name=type_filter]:checked").val();
+
+            Object.keys(data).forEach(id => {
+                const entry = data[id];
+                if (
+                    (answerabilityFilter === "all_answerability" || entry.answerability.toLowerCase() === answerabilityFilter) &&
+                    (typeFilter === "all_types" || entry.question_type.toLowerCase() === typeFilter)
+                ) {
+                    filteredData[id] = entry;
                 }
             });
-            $(".question-item").click(function () {
-                $("#temp-rel-labels").empty();
-                $("#temp-abs-labels").empty();
-                $("#geo-labels").empty();
-                show_question_info(data[$(this).attr('id')]);
-                $("#question-display").removeClass("d-none");
-            });
-        };
 
-        function shape_window() {
-            $("body").css("overflow", "hidden");
-            console.log($(window).height() - $("#navbar").outerHeight());
-            // $("main").css("body", $(window).height());
-            let navbar_height = $("#navbar").outerHeight();
-            let filter_height = $("#filter-cell").outerHeight();
-            $("#questions-list-cell").css("height", $(window).height() - navbar_height - filter_height);
-            $("#question-display").css("height", $(window).height() - navbar_height);
-        };
+            createQuestionsList(filteredData);
+        }
 
         $(document).ready(function () {
-            shape_window();
-            // retrieve data from example.json
-            $.getJSON("example.json", function (data) {
-                console.log(data)
-                create_questions_list(data);
-                $("input[name=model_filter]").click(function () { create_questions_list(data) });
-                $("input[name=answerability_filter]").click(function () { create_questions_list(data) });
-                $("input[name=type_filter]").click(function () { create_questions_list(data) });
+            // Load the JSON data
+            $.getJSON("all.json", function (data) {
+                createQuestionsList(data);
+
+                // Apply question filters
+                $("input[name=answerability_filter], input[name=type_filter]").click(function () {
+                    applyFilters(data);
+                });
             });
-            // create_questions_list(data);
-            // $("input[name=dataset_filter]").click(function () { create_questions_list(data) });
-            // $("input[name=type_filter]").click(function () { create_questions_list(data) });
+
+            // Enable tab switching
+            $(document).on("click", ".nav-link", function (e) {
+                console.log("here")
+                e.preventDefault();
+                $(this).tab('show');
+            });
         });
     </script>
 </body>
